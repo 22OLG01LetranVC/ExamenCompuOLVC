@@ -1,0 +1,32 @@
+DROP DATABASE IF EXISTS pinturas_recubrimientos_db;
+
+CREATE DATABASE pinturas_recubrimientos_db;
+
+USE pinturas_recubrimientos_db;
+
+CREATE TABLE login (
+    username VARCHAR(100),
+    pasword VARCHAR(100)
+);
+
+INSERT INTO `login` (`username`, `pasword`)
+VALUES ('oscar', '2007');
+
+CREATE TABLE `productos` (
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_producto VARCHAR(150) NOT NULL,
+    descripcion VARCHAR(50),
+    precio DECIMAL(10, 2) NOT NULL,
+    stock INT NOT NULL DEFAULT 0,
+    fecha_registro DATE
+);
+
+INSERT INTO productos (nombre_producto, descripcion, precio, stock, fecha_registro) VALUES
+('Pintura Acrílica Mate', 'Pintura para interiores y exteriores', 150.75, 75, '2024-05-10'),
+('Esmalte Sintético Brillante', 'Recubrimiento de alto brillo para metal', 95.50, 45, '2024-05-12'),
+('Sellador de Superficies', 'Sellador para preparación de paredes', 55.00, 120, '2024-05-15'),
+('Impermeabilizante de Techos', 'Recubrimiento para protección contra la humedad', 210.00, 30, '2024-05-18');
+
+
+SELECT * FROM login;
+SELECT * FROM productos;
